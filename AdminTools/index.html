@@ -1,12 +1,12 @@
 <html>
 
     <script type="text/javascript">
-        
+		        
         document.write("<button onclick='reset()'>Reset</button>");
         
         function reset(){
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", "/php/resetStatus.php?id="+3);
+            xmlhttp.open("GET", "/snowplow/php/resetStatus.php");
             xmlhttp.send();
         }
     </script>
