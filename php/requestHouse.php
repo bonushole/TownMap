@@ -12,20 +12,19 @@ if ($conn->connect_error) {
     echo json_encode("something went wrong");
 } 
 
-$sql ="SELECT * FROM houses WHERE status=1;";
+$sql = $conn->prepare("INSERT INTO requests VALUES (0,?,?,?);");
 
-$result = $conn->query($sql);
+$address = $_GET['address'];
+$reason = $_GET['reason'];
+$name = $_GET['name'];
 
-//$row = $result->fetch_assoc();
+$sql->bind_param("sss", $address, $reason, $name);
 
-$json = mysqli_fetch_all ($result, MYSQLI_ASSOC);
-echo json_encode($json);
+$sql->execute();
 
-//echo json_encode(array($row["address"]));
-//$dummy = array("this","that");
- 
-//echo json_encode($dummy);
+$sql->close();
 
 $conn->close();
+
 
 ?>

@@ -12,19 +12,9 @@ if ($conn->connect_error) {
     echo json_encode("something went wrong");
 } 
 
-$sql ="SELECT * FROM houses WHERE status=1;";
+$sql = "UPDATE houses SET status=0 WHERE id =".$_GET['id'];
 
-$result = $conn->query($sql);
-
-//$row = $result->fetch_assoc();
-
-$json = mysqli_fetch_all ($result, MYSQLI_ASSOC);
-echo json_encode($json);
-
-//echo json_encode(array($row["address"]));
-//$dummy = array("this","that");
- 
-//echo json_encode($dummy);
+$conn->query($sql);
 
 $conn->close();
 
