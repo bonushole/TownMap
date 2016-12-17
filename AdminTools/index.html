@@ -1,0 +1,13 @@
+<html>
+
+    <script type="text/javascript">
+        
+        document.write("<button onclick='reset()'>Reset</button>");
+        
+        function reset(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/php/resetStatus.php?id="+3);
+            xmlhttp.send();
+        }
+    </script>
+</html>
