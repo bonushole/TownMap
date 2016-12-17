@@ -1,13 +1,26 @@
 <html>
-
+	
+	        <style>
+	        body{
+			background-image: url("/Images/adminBG.png")
+	        }
+			</style>
+			<div id='text'></div>
+			
+			<section>
+        <center><A HREF="seeRequests.html">Requests</A></center>
+            </section>
+			 
     <script type="text/javascript">
-		        
-        document.write("<button onclick='reset()'>Reset</button>");
+		document.getElementById('text').innerHTML = "<button onclick='reset()'>Reset</button>";
+        //document.write("<button onclick='reset()'>Reset</button>");
         
         function reset(){
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", "/snowplow/php/resetStatus.php");
             xmlhttp.send();
         }
-    </script>
+    </script> 
+	</body>
+	
 </html>
