@@ -1,4 +1,17 @@
-<script type="text/javascript">
+<!DOCTYPE html>
+
+<html lang="en">
+    
+<body>   
+	<style>
+	body {
+			background-image: url("snow-snowing-utah-224877-o.jpg")
+	}	
+	</style>
+	<center>
+<div id='text'></div>
+    </center>
+<script>
     
    function reqListener () {
       console.log(this.responseText);
@@ -12,18 +25,28 @@
         
         
         //document.write(response.length);
-        
+        var text = "";
         for ( i=0; i<response.length; i++){
-            
+            text =text+  response[i].address+"<button onclick='Resolve("+response[i].id+")'>Resolve</button>"+"<br>" ;
+            /**
             document.write(response[i].address);
-            document.write("<br>");
+             document.write("<button onclick='Resolve("+response[i].id+")'>Resolve</button>");
+            document.write("<br>");**/
            // document.write(</br>);
             
         }
-        
+        document.getElementById('text').innerHTML = text;
     };
     oReq.open("get", "php/queryDatabase.php", true);
 
     oReq.send();
+    
+    function Resolve(id){
+         var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "php/resolveHouse.php?id=" +id);
+    xmlhttp.send();
+    }
 
 </script>
+</body> 
+</html>
