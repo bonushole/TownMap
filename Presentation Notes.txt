@@ -3,3 +3,4 @@
 3. Walkthrough of how it would theoretically work
 	a. create listing through "Find Help" and have user view it through "Help Others"
 	b. resolve listing
+OPTIONAL: Throw some jokes in there to make it more memorable
