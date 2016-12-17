@@ -54,7 +54,7 @@
     
      function Decline(id){
          var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "php/resolveHouse.php?id=" +id);
+    xmlhttp.open("GET", "/snowplow/php/declineRequest.php?id=" +id);
     xmlhttp.send();
     }
     
