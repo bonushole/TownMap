@@ -30,8 +30,7 @@
         var text = "";
         for ( i=0; i<response.length; i++){
             
-            
-            text =text + response[i].address +"<br>";//+"<button onclick='Resolve("+response[i].id+")'>Resolve</button>"+"<br>" ;
+            text =text +"Name: "+response[i].name + "     Address: "+ response[i].address +"<br>" +"<button onclick='Accept("+response[i].id+")'>Accept</button>"+"<button onclick='Decline("+response[i].id+")'>Decline</button>"+"<br>" ;
             
             /**
             document.write(response[i].address);
@@ -48,7 +47,7 @@
     
     function Accept(id){
          var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "php/resolveHouse.php?id=" +id);
+    xmlhttp.open("GET", "/snowplow/php/resolveHouse.php?id=" +id);
     xmlhttp.send();
     }
     
