@@ -5,7 +5,7 @@
 <body>   
 	<style>
 	body {
-			background-image: url("Images/BGLessOpaque.png")
+			background-image: url("/snowplow/Images/BGLessOpaque.png")
 	}	
 	</style>
 	<center>
@@ -22,7 +22,7 @@
     var oReq = new XMLHttpRequest(); //New request object
     oReq.onload = function() {
 //    	document.write(this.responseText);
-       // alert(this.responseText);
+        //alert(this.responseText);
         var response=JSON.parse(this.responseText); 
         
         
@@ -31,7 +31,7 @@
         for ( i=0; i<response.length; i++){
             
             
-            text =text+  response[i].address+"<button onclick='Resolve("+response[i].id+")'>Resolve</button>"+"<br>" ;
+            text =text + response[i].address +"<br>";//+"<button onclick='Resolve("+response[i].id+")'>Resolve</button>"+"<br>" ;
             
             /**
             document.write(response[i].address);
@@ -42,15 +42,22 @@
         }
         document.getElementById('text').innerHTML = text;
     };
-    oReq.open("get", "php/queryDatabase.php", true);
+    oReq.open("get", "/snowplow/php/queryRequests.php", true);
 
     oReq.send();
     
-    function Resolve(id){
+    function Accept(id){
          var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", "php/resolveHouse.php?id=" +id);
     xmlhttp.send();
     }
+    
+     function Decline(id){
+         var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "php/resolveHouse.php?id=" +id);
+    xmlhttp.send();
+    }
+    
 
 </script>
 </body> 
