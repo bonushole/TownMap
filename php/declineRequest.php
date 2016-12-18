@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     echo json_encode("something went wrong");
 } 
 
-$sql ="DELETE FROM requests WHERE id="+$_GET['id']+";";
+$sql ="DELETE FROM requests WHERE id=". $_GET['id'] .";";
 
 $result = $conn->query($sql);
 $conn->close();
