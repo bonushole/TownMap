@@ -5,22 +5,26 @@
 			background-image: url("/Images/adminBG.png")
 	        }
 			</style>
-			<div id='text'></div>
+			<center><div id='text'></div></center>
 			
-			<section>
-        <center><A HREF="seeRequests.html">Requests</A></center>
-            </section>
-			 
+			<head>
+        <font size=+3><center><A HREF="seeRequests.html">Requests</A></center></font>
+            </head>
+        <br>
+        <br>
+    <body> 
+    <br>
+    <br>
     <script type="text/javascript">
 		document.getElementById('text').innerHTML = "<button onclick='reset()'>Reset</button>";
         //document.write("<button onclick='reset()'>Reset</button>");
-        
+
         function reset(){
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", "/snowplow/php/resetStatus.php");
             xmlhttp.send();
         }
-    </script> 
+    </script>
 	</body>
 	
 </html>
