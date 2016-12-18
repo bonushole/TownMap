@@ -2,7 +2,7 @@
 	
 	        <style>
 	        body{
-			background-image: url("/Images/adminBG.png")
+			background-image: url("../Images/adminBG.png")
 	        }
 			</style>
 			<center><div id='text'></div></center>
@@ -21,7 +21,7 @@
 
         function reset(){
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", "/snowplow/php/resetStatus.php");
+            xmlhttp.open("GET", "../php/resetStatus.php");
             xmlhttp.send();
         }
     </script>
